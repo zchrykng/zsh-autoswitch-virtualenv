@@ -413,7 +413,7 @@ function disable_autoswitch_virtualenv() {
 # immediately removes itself from the zsh-hook.
 # This seems important for "instant prompt" zsh themes like powerlevel10k
 function _autoswitch_startup() {
-    if ! type "python" > /dev/null; then
+    if ! type "$AUTOSWITCH_DEFAULT_PYTHON" > /dev/null; then
         printf "WARNING: python binary not found on PATH.\n"
         printf "zsh-autoswitch-virtualenv plugin will be disabled.\n"
     else
